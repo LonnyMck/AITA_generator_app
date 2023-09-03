@@ -4,6 +4,7 @@ import android.graphics.Color
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -18,6 +19,7 @@ import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -79,7 +81,9 @@ Button( onClick = clickHandle,
 @Composable
 fun AITAmain(starter: String, opinion: String, commenter: String, location:String, involves: String, clickHandle1:()->Unit, clickHandle2:()->Unit, modifier: Modifier = Modifier) {
 
-    Column( modifier = Modifier.padding(40.dp) ) {
+    Column(
+        modifier = Modifier.padding(40.dp)
+    ) {
         Row(
             horizontalArrangement = Arrangement.Center,
             modifier = Modifier
@@ -119,7 +123,7 @@ fun AITAmain(starter: String, opinion: String, commenter: String, location:Strin
         ) {
             RandoClick(clickHandle2, displayName = "Comment")
         }
-        Column(Modifier.weight(2f)){
+        Column(Modifier.weight(4f)){
         Text(
             text = "$commenter thinks $opinion because..."
         )
